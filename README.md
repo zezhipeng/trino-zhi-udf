@@ -19,11 +19,12 @@ mvn clean package
 - count 次数统计
 
 `funnel`(timestamp_col unix_time, window_size double, event_col varchar, events varchar) -> long
+
 参数说明
 - timestamp_col 统计的时间列
 - window_size 统计的滑动时间窗口宽度
 - event_col 事件值列
-- events 事件集合的字符串，用`,`分割，如 "event_name1,event_name2,event_name3"
+- events 事件集合的字符串，用`,`分割，如 'event_name1,event_name2,event_name3'
 
 通过统计的时间列，去统计指定的滑动窗口内指定维度的事件值到达哪个流程，即如果只有 event_name1 行数据，那么返回结果为 1，存在 event_name1 和 event_name2，且 event_name1_timestamp < event_name2_timestamp
 那么结果为 2
@@ -33,10 +34,11 @@ mvn clean package
 `funnel`(timestamp_col unix_time, window_size double, event_col varchar, array<varchar> ... array<varchar>) -> long
 
 `funnel_merge`(funnel long) -> array<long>
+ 
 聚合 funnel 函数的统计结果
 举例：
-如果 funnel 返回结果只有一条 4，那么即为 [1, 1, 1, 1]
-如果 funnel 返回结果只有两条 3 和 4，那么即为 [2, 2, 2, 1]
+如果 funnel 返回结果只有一条 `4`，那么即为 `[1, 1, 1, 1]`
+如果 funnel 返回结果只有两条 `3` 和 `4`，那么即为 `[2, 2, 2, 1]`
 
 
 ## 如何使用
