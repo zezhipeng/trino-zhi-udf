@@ -1,5 +1,5 @@
 ## 说明
-这是一个 Trino 的 UDF/UDAF 包
+Trino 的 UDF
 
 ## 如何使用
 ```
