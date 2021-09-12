@@ -45,7 +45,7 @@ mvn clean package
 
 ### 分词统计
 
-假设现在有一张评论表 comment，数据如下
+假设现在有一张评论表`comment`，数据如下
 
 ```
 select * from comment limit 10;
